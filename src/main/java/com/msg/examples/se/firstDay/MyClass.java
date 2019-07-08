@@ -1,7 +1,8 @@
 package com.msg.examples.se.firstDay;
 
-public class myClass {
+public class MyClass {
     public static void main(String[] args) {
+        /* First exercise
         int sum=0;
         int i=0;
         for(i=1;i<11;i++)
@@ -27,5 +28,17 @@ public class myClass {
         }while (++i<10);
 
         System.out.println(sum);
+
+         */
+
+        /*Second exercise*/
+
+        Hamburger hamburger1=new Hamburger("McPuisor",5,"20.01.2020");
+        Hamburger hamburger2=new Hamburger("Hamburger",7,"20.01.2020");
+        Hamburger hamburger3=new Hamburger("McToast",3,"20.03.2020");
+
+        System.out.println(hamburger1.toString());
+        hamburger1.setWeight(50);
+        System.out.println(hamburger1.toString());
     }
-    }
+}
