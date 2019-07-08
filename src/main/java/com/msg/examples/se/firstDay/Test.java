@@ -49,6 +49,7 @@ public class Test {
        Hamburger h1 = new Hamburger("hamburger1", 12.5, "12/07/2019");
        Hamburger h2 = new Hamburger("hamburger2", 12.7, "13/07/2019");
        Hamburger h3 = new Hamburger("hamburger3", 45.8, "14/07/2019");
+       h3.changeWeight(10);
        List<Hamburger>hamburgers= new ArrayList<>();
        hamburgers.add(h1);
        hamburgers.add(h2);

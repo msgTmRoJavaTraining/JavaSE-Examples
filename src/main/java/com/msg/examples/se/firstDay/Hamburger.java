@@ -19,7 +19,8 @@ public class Hamburger {
         return weight;
     }
     public void changeWeight(int x){
-        this.weight = (x/100) * this.weight;
+        double percent = (double)x/100;
+        this.weight = percent * this.weight;
     }
 
     @Override
