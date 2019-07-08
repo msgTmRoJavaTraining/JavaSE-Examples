@@ -3,21 +3,23 @@ package com.msg.examples.se.inheritance;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class Employee {
+public class Employee extends Person{
 
-    private String name;
-    private double salary;
-    private LocalDate hireDay;
+    protected double salary;
+    protected LocalDate hireDay;
 
     public Employee(String n, double s, int year, int month, int day) {
-        name = n;
+        super(n);
         salary = s;
         hireDay = LocalDate.of(year, month, day);
     }
 
-    public String getName() {
-        return name;
+
+    public void dance(){
+        System.out.println("Employees only dance when alcohol is available");
     }
+
+
 
     public double getSalary() {
         return salary;
@@ -26,6 +28,11 @@ public class Employee {
     public LocalDate getHireDay() {
         return hireDay;
     }
+
+    public String toString(){
+        return "Name: "+ getName() + "Salary" + getSalary()+ "Hire Day: " + getHireDay();
+    }
+
 
     public void raiseSalary(double byPercent) {
         double raise = salary * byPercent / 100;
