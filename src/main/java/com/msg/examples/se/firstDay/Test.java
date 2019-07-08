@@ -1,11 +1,13 @@
 package com.msg.examples.se.firstDay;
 
+import com.sun.corba.se.impl.transport.EventHandlerBase;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Test {
     public static void main(String args[]){
-        int sum=0;
+       /* int sum=0;
         int index = 0;
         List<Integer> list = new ArrayList<Integer>();
         list.add(1);
@@ -43,7 +45,16 @@ public class Test {
             index = index +1;
         }while(index <= list.size()-1);
 
-        System.out.println(sum);
-
+        System.out.println(sum);*/
+       Hamburger h1 = new Hamburger("hamburger1", 12.5, "12/07/2019");
+       Hamburger h2 = new Hamburger("hamburger2", 12.7, "13/07/2019");
+       Hamburger h3 = new Hamburger("hamburger3", 45.8, "14/07/2019");
+       List<Hamburger>hamburgers= new ArrayList<>();
+       hamburgers.add(h1);
+       hamburgers.add(h2);
+       hamburgers.add(h3);
+       for(Hamburger h: hamburgers){
+           System.out.println(h);
+       }
     }
 }
