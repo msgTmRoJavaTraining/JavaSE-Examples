@@ -3,14 +3,15 @@ package com.msg.examples.se.inheritance;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class Employee {
+public class Employee extends Person{
 
-    private String name;
     private double salary;
     private LocalDate hireDay;
+    private boolean alcohol;
 
-    public Employee(String n, double s, int year, int month, int day) {
+    public Employee(String n, double s, int year, int month, int day,boolean alc) {
         name = n;
+        this.alcohol=alc;
         salary = s;
         hireDay = LocalDate.of(year, month, day);
     }
@@ -52,5 +53,11 @@ public class Employee {
         return 7 * Objects.hashCode(name)
                 + 11 * Double.hashCode(salary)
                 + 13 * Objects.hashCode(hireDay);
+    }
+
+    @Override
+    public void dance() {
+        if(alcohol)
+            System.out.println("I can dance only if I'm drunk!");
     }
 }

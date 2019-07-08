@@ -3,8 +3,8 @@ package com.msg.examples.se.inheritance;
 public class Manager extends Employee {
     private double bonus;
 
-    public Manager(String n, double s, int year, int month, int day) {
-        super(n, s, year, month, day);
+    public Manager(String n, double s, int year, int month, int day,boolean alc) {
+        super(n, s, year, month, day,alc);
     }
 
     public void setBonus(double bonus) {
@@ -19,8 +19,26 @@ public class Manager extends Employee {
         return baseSalary + bonus;
     }
 
+    @Override
+    public boolean equals(Object otherObject) {
+        Manager other = (Manager) otherObject;
+        return super.equals(otherObject)
+                && bonus == other.bonus
+                ;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
+
+    @Override
+    public void dance() {
+        super.dance();
+    }
+
     public static void main(String[] args) {
-        Manager manager = new Manager("a", 1000, 1999, 12,1);
+        Manager manager = new Manager("a", 1000, 1999, 12,1,false);
         manager.setBonus(15);
         System.out.println(manager.getSalary());
     }
