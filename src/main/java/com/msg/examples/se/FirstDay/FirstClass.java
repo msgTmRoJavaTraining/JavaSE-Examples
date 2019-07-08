@@ -1,41 +1,29 @@
 package com.msg.examples.se.FirstDay;
 
+import java.util.HashMap;
+
 public class FirstClass {
    public static void main(String args[])
    {
-        //FOR
-       int sum=0;
-       for(int i=0;i<10;i++)
-       {
-           if(i%2==0)continue;
-           System.out.println(i+" ");
-           sum=sum+i;
-       }
-       System.out.println("sum(for)"+sum);
-       int i=0;
-       //DO
-       sum=0;
-       do{
-           if(i%2!=0) {
-               System.out.println(i + " ");
-               sum=sum+i;
-           }
+       Hamburger ham1=new Hamburger();
+       Hamburger ham2=new Hamburger();
+       Hamburger ham3=new Hamburger();
 
-           i=i+1;
-       }while(i<10);
-       System.out.println("sum(for)"+sum);
-    i=0;
-       //WHILE
-       sum=0;
-       while(i!=10){
+       ham1.setName("Hamzy1");
+       ham1.setWeight(20);
+       ham1.setExpire("2020/01/01");
 
-           if(i%2!=0) {
-               System.out.println(i + " ");
-               sum=sum+i;
-           }
-           i=i+1;
-       }
-       System.out.println("sum(for)"+sum);
+       ham2.setName("Hamzy2");
+       ham2.setWeight(50);
+       ham2.setExpire("2020/01/01");
+
+       ham3.setName("Hamzy3");
+       ham3.setWeight(100);
+       ham3.setExpire("2020/01/01");
+
+
+       System.out.println(ham1.getName()+ " "+ham1.getWeight());
+       System.out.println("After raise(25): "+ham1.getName()+ " "+ham1.raise(25));
 
 
    }
