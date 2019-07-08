@@ -28,7 +28,7 @@ public class Hamburger {
     }
     public double raise(double x)
     {
-        this.weight=this.weight+x;
+        this.weight=this.weight+(x*this.weight/100);
         return this.weight;
     }
 }

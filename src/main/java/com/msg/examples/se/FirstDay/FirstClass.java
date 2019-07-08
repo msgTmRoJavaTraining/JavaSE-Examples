@@ -10,7 +10,7 @@ public class FirstClass {
        Hamburger ham3=new Hamburger();
 
        ham1.setName("Hamzy1");
-       ham1.setWeight(20);
+       ham1.setWeight(100);
        ham1.setExpire("2020/01/01");
 
        ham2.setName("Hamzy2");
@@ -18,7 +18,7 @@ public class FirstClass {
        ham2.setExpire("2020/01/01");
 
        ham3.setName("Hamzy3");
-       ham3.setWeight(100);
+       ham3.setWeight(200);
        ham3.setExpire("2020/01/01");
 
 
