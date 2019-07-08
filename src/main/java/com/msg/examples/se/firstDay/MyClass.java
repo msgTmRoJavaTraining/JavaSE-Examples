@@ -29,9 +29,9 @@ public class MyClass {
 
         System.out.println(sum);
 
-         */
+        <------------------------------------------------> */
 
-        /*Second exercise*/
+        /*Second exercise
 
         Hamburger hamburger1=new Hamburger("McPuisor",5,"20.01.2020");
         Hamburger hamburger2=new Hamburger("Hamburger",7,"20.01.2020");
@@ -40,5 +40,15 @@ public class MyClass {
         System.out.println(hamburger1.toString());
         hamburger1.setWeight(50);
         System.out.println(hamburger1.toString());
+
+        <------------------------------------------------> */
+
+         /*Third exercise*/
+
+        Car car1=new Car();
+        Car car2=new Car("red");
+        Car car3=new Car("blue",5);
+
+
     }
 }
