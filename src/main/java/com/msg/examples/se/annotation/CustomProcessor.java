@@ -1,6 +1,6 @@
 package com.msg.examples.se.annotation;
 
-import com.sun.tools.javac.Main;
+//import com.sun.tools.javac.Main;
 
 import javax.annotation.processing.*;
 import javax.lang.model.SourceVersion;
@@ -90,6 +90,6 @@ public class CustomProcessor extends AbstractProcessor {
   public static void main(String args[]) throws Exception {
     String arguments[] = {"-proc:only", "-Adebug=true", "-processor", "com.msg.examples.se.annotation.CustomProcessor",
             "com.msg.examples.se.annotation.Annotated"};
-    Main.main(arguments);
+   // Main.main(arguments);
   }
 }
