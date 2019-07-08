@@ -4,7 +4,7 @@ public class Main{
 
     public int sumFor(){
         int sum = 1;
-        for(int i = 1;i<=10;i++){
+        for(int i = 1;i<10;i++){
 
             sum=sum+2;
         }
@@ -17,10 +17,10 @@ public class Main{
         int sum = 0;
         while(flag <= 10)
         {
-            if(i % 2 == 0)
-                continue;
-            sum+=i;
-            i++;
+             if(i % 2 != 0) {
+                 sum += i;
+             }
+             i++;
             flag++;
 
         }
@@ -44,5 +44,32 @@ public class Main{
        System.out.println(m1.sumFor());
        System.out.println(m1.sumWhile());
        System.out.println(m1.sumDoWhile());
+
+       Hamburger h1 = new Hamburger();
+       h1.setName("hamburger 1");
+       h1.setWeight(1.5);
+       h1.setExpirationDate("12/12/2019");
+       System.out.println(h1.getName());
+       System.out.println(h1.getWeight());
+       System.out.println(h1.setPercentWeight(10));
+
+
+       Hamburger h2 = new Hamburger();
+        h2.setName("hamburger 2");
+        h2.setWeight(1.0);
+        h2.setExpirationDate("25/12/2019");
+        System.out.println(h2.getName());
+        System.out.println(h2.getWeight());
+        System.out.println(h2.setPercentWeight(20));
+
+
+       Hamburger h3 = new Hamburger();
+       h3.setName("hamburger 3");
+       h3.setWeight(2.5);
+       h3.setExpirationDate("30/12/2019");
+       System.out.println(h3.getName());
+       System.out.println(h3.getWeight());
+       System.out.println(h3.setPercentWeight(50));
+
     }
 }
