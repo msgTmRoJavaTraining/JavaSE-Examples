@@ -3,20 +3,26 @@ package com.msg.examples.se.inheritance;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class Employee {
+public class Employee extends Person{
 
-    private String name;
+
     private double salary;
     private LocalDate hireDay;
 
-    public Employee(String n, double s, int year, int month, int day) {
-        name = n;
-        salary = s;
+    public Employee(){}
+    public Employee(String name, int age, double salary, int year, int month, int day) {
+        super(name, age);
+        this.salary = salary;
         hireDay = LocalDate.of(year, month, day);
     }
 
+    @Override
+    public void dance() {
+        System.out.println("Dance status: Need alcohol to dance!");
+    }
+
     public String getName() {
-        return name;
+        return super.getName();
     }
 
     public double getSalary() {
@@ -43,14 +49,26 @@ public class Employee {
         // now we know otherObject is a non-null Employee
         Employee other = (Employee) otherObject;
         // test whether the fields have identical values
-        return name.equals(other.name)
+        return getName().equals(other.getName())
                 && salary == other.salary
                 && hireDay.equals(other.hireDay);
     }
 
+
     public int hashCode() {
-        return 7 * Objects.hashCode(name)
+        return 7 * Objects.hashCode(getName())
                 + 11 * Double.hashCode(salary)
                 + 13 * Objects.hashCode(hireDay);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Name: " + getName()+ " , age: " + getAge() + " , position: " );
+        sb.append("Employee{" +
+                "salary=" + salary +
+                ", hireDay=" + hireDay +
+                '}');
+        return sb.toString();
     }
 }
