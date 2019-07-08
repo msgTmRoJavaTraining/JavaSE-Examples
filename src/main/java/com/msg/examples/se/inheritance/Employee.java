@@ -3,20 +3,19 @@ package com.msg.examples.se.inheritance;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class Employee {
+public class Employee extends Person{
 
-    private String name;
     private double salary;
     private LocalDate hireDay;
 
     public Employee(String n, double s, int year, int month, int day) {
-        name = n;
+        super(n);
         salary = s;
         hireDay = LocalDate.of(year, month, day);
     }
 
     public String getName() {
-        return name;
+        return super.getName();
     }
 
     public double getSalary() {
@@ -52,5 +51,10 @@ public class Employee {
         return 7 * Objects.hashCode(name)
                 + 11 * Double.hashCode(salary)
                 + 13 * Objects.hashCode(hireDay);
+    }
+    @Override
+    public void dance()
+    {
+        System.out.println("Dance only when alcohol is available");
     }
 }
