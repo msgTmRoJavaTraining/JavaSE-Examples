@@ -29,7 +29,7 @@ public class Manager extends Employee {
 
     @Override
     public String toString() {
-        return super.toString();
+        return super.toString()+" bonus="+bonus;
     }
 
     public static void main(String[] args) {
