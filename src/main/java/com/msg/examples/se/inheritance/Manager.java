@@ -19,6 +19,10 @@ public class Manager extends Employee {
         System.out.println("Dance status: No dance!");
     }
 
+    public double getBonus() {
+        return bonus;
+    }
+
     @Override
     public double getSalary() {
 //        double baseSalary = salary + bonus; // error: salary is private in Employee
@@ -51,6 +55,8 @@ public class Manager extends Employee {
         return getName().equals(manager.getName())
                 && getSalary() == manager.getSalary()
                 && getHireDay().equals(manager.getHireDay());
+                //&& this.getBonus() == manager.getBonus();
+
     }
 
 
