@@ -22,9 +22,9 @@ public class Test {
             if((list.indexOf(i)%2)!= 0){
                 sum= sum + list.get(i);
             }
-            /*else{
+            else{
                 continue;
-            }*/
+            }
         }
         sum = 0;
         while(index <= list.size()-1){
