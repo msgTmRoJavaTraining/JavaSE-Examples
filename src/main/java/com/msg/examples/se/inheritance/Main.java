@@ -12,6 +12,14 @@ public class Main {
         staff[1] = new Employee("Harry Hacker", 50000, 1989, 10, 1,true);
         staff[2] = new Employee("Tony Tester", 40000, 1990, 3, 15,false);
 
+        Manager mng1=new Manager("mihai",2500,1980,6,5,true);
+        Manager mng2=new Manager("mihai",2500,1980,6,5,true);
+
+        //Simple test to prove the working of "equals" method
+        if(mng1.equals(mng2))
+            System.out.println("EGALE");
+        else System.out.println("DIFERITE");
+
         for (Employee e : staff) {
 //            System.out.println(e.getName() + " " + e.getSalary());
         }
