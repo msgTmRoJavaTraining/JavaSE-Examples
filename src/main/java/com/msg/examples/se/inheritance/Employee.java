@@ -33,6 +33,7 @@ public class Employee extends Person{
         salary += raise;
     }
 
+    @Override
     public boolean equals(Object otherObject) {
         // a quick test to see if the objects are identical
         if (this == otherObject) return true;
