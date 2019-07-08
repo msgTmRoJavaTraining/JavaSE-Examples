@@ -1,9 +1,11 @@
 package com.msg.examples.se.firstDay;
 
 import com.sun.corba.se.impl.transport.EventHandlerBase;
+import com.sun.deploy.util.ArrayUtil;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class Test {
     public static void main(String args[]){
@@ -56,6 +58,17 @@ public class Test {
        hamburgers.add(h3);
        for(Hamburger h: hamburgers){
            System.out.println(h);
+       }
+
+       Car car1 = new Car();
+       Car car2 = new Car("white");
+       Car car3 = new Car(2, "blue");
+       List<Car> cars = new ArrayList<>();
+       cars.add(car1);
+       cars.add(car2);
+       cars.add(car3);
+       for(Car c: cars){
+            System.out.println(c);
        }
     }
 }
