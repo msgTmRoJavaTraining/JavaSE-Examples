@@ -71,5 +71,12 @@ public class Main{
        System.out.println(h3.getWeight());
        System.out.println(h3.setPercentWeight(50));
 
+
+        Car c1 = new Car();
+        System.out.println(c1.toString());
+        Car c2 = new Car("red");
+        System.out.println(c2.toString());
+        Car c3 = new Car("white",7);
+        System.out.println(c3.toString());
     }
 }
