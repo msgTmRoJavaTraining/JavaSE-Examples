@@ -19,6 +19,40 @@ public class Manager extends Employee {
         return baseSalary + bonus;
     }
 
+    @Override
+    void dance() {
+        System.out.println("Managers don't dance.");
+    }
+
+    @Override
+    public boolean equals(Object otherObject) {
+        // a quick test to see if the objects are identical
+        if (this == otherObject) return true;
+
+        // must return false if the explicit parameter is null
+        if (otherObject == null) return false;
+
+        // if the classes don't match, they can't be equal
+        if (getClass() != otherObject.getClass())
+            return false;
+
+        // now we know otherObject is a non-null Employee
+        Manager other = (Manager) otherObject;
+
+        // test whether the fields have identical values
+        return getName().equals(other.getName())
+                && getSalary() == other.getSalary()
+                && getHireDay().equals(other.getHireDay())
+                && bonus == other.bonus;
+    }
+
+    @Override
+    public String toString() {
+        return "Manager: " + super.toString() + ", bonus: " + bonus;
+    }
+
+
+
     public static void main(String[] args) {
         Manager manager = new Manager("a", 1000, 1999, 12,1);
         manager.setBonus(15);
