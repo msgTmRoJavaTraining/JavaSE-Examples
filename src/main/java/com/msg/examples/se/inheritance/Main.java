@@ -4,14 +4,15 @@ public class Main {
     public static void main(String[] args) {
 
         Manager manager = new Manager("Le Bo$$", 1000000, 1999, 12, 1);
+        Manager manager1 = new Manager("Sefuu",200000,2000,1,12);
         manager.setBonus(100);
 
-        Employee[] staff = new Employee[3];
+        Employee[] staff = new Employee[4];
 
         staff[0] = manager;
         staff[1] = new Employee("Harry Hacker", 50000, 1989, 10, 1);
         staff[2] = new Employee("Tony Tester", 40000, 1990, 3, 15);
-
+        staff[3] = manager1;
         for (Employee e : staff) {
 //            System.out.println(e.getName() + " " + e.getSalary());
         }
@@ -44,5 +45,8 @@ public class Main {
             System.out.println(e);
         }
 
+        System.out.println(manager.equals(manager1));
+        System.out.println(manager.toString());
+        System.out.println(manager1.toString());
     }
 }

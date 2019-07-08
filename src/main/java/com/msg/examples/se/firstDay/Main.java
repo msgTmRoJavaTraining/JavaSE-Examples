@@ -4,7 +4,7 @@ public class Main{
 
     public int sumFor(){
         int sum = 1;
-        for(int i = 1;i<10;i++){
+        for(int i = 1;i<=10;i++){
 
             sum=sum+2;
         }
@@ -79,4 +79,8 @@ public class Main{
         Car c3 = new Car("white",7);
         System.out.println(c3.toString());
     }
+
+
+
+
 }

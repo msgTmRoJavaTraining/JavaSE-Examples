@@ -22,7 +22,7 @@ public class Hamburger{
     }
     public double setPercentWeight(double  x){
 
-        this.weight = this.weight + (x/100)*this.weight;
+        this.weight = this.weight + x*this.weight/100;
         return this.weight;
     }
 
