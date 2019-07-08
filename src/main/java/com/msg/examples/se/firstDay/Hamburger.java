@@ -8,8 +8,6 @@ public class Hamburger {
 
 
 
-
-
     public String getName(){
         return name;
     }
