@@ -48,5 +48,7 @@ public class Main {
         System.out.println(manager.equals(manager1));
         System.out.println(manager.toString());
         System.out.println(manager1.toString());
+        Person p1 = new Student("Ionel");
+        p1.dance();
     }
 }

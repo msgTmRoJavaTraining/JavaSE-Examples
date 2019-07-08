@@ -51,6 +51,6 @@ public class Manager extends Employee {
 
     @Override
     public String toString(){
-        return this.getName() + this.getSalary() + this.getHireDay() + this.getBonus();
+        return super.toString() + this.getBonus();
     }
 }

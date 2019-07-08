@@ -51,6 +51,10 @@ public class Employee extends Person{
                 + 13 * Objects.hashCode(hireDay);
     }
     @Override
+    public String toString(){
+        return this.getName() + this.getSalary() + this.getHireDay() ;
+    }
+    @Override
     public void dance(){
         System.out.println("Employees dance only when alcohol is available");
     }
