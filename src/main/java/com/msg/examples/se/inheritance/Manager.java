@@ -32,11 +32,6 @@ public class Manager extends Employee {
         return super.toString();
     }
 
-    @Override
-    public void dance() {
-        super.dance();
-    }
-
     public static void main(String[] args) {
         Manager manager = new Manager("a", 1000, 1999, 12,1,false);
         manager.setBonus(15);
