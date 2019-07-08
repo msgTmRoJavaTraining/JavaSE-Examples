@@ -18,18 +18,18 @@ public class Test {
         list.add(8);
         list.add(9);
         list.add(10);
-        for(int i=0; i<= (list.size()); i++){
-            if((list.indexOf(i)%2) != 0){
-                sum= sum + list.indexOf(i);
+        for(int i=0; i<=(list.size()-1); i++){
+            if((list.indexOf(i)%2)!= 0){
+                sum= sum + list.get(i);
             }
-            else{
+            /*else{
                 continue;
-            }
+            }*/
         }
         sum = 0;
-        while(index <= list.size()){
+        while(index <= list.size()-1){
             if((list.indexOf(index)%2) != 0){
-                sum= sum + list.indexOf(index);
+                sum= sum + list.get(index);
             }
             index = index +1;
         }
@@ -37,11 +37,11 @@ public class Test {
         sum = 0;
         do{
             if((list.indexOf(index)%2) != 0){
-                sum= sum + list.indexOf(index);
+                sum= sum + list.get(index);
             }
 
             index = index +1;
-        }while(index <= list.size());
+        }while(index <= list.size()-1);
 
         System.out.println(sum);
 
