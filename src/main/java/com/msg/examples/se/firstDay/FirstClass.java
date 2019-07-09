@@ -1,6 +1,4 @@
-package com.msg.examples.se.FirstDay;
-
-import java.util.HashMap;
+package com.msg.examples.se.firstDay;
 
 public class FirstClass {
    public static void main(String args[])

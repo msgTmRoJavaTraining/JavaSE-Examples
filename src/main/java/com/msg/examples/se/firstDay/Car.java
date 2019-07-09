@@ -1,4 +1,4 @@
-package com.msg.examples.se.FirstDay;
+package com.msg.examples.se.firstDay;
 
 public class Car {
     private int seats;
