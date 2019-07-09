@@ -16,6 +16,7 @@ public class Lists {
     LinkedList<Integer> linked = new LinkedList<>(array);
     linked.addLast(10);
     linked.addFirst(10);
+
     CollectionsUtil.forEachExternalCollection(linked);
     System.out.println("Max = " + Collections.max(linked));
     Collections.replaceAll(linked, 10, 7);
