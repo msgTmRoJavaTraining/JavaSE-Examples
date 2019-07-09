@@ -27,7 +27,6 @@ class ChildClass implements A, B {
   @Override
   public void foo() {
     A.super.foo(); //original foo() from A accessed
-//    A.foo();
     B.super.foo(); //original foo() from B accessed
   }
 
