@@ -141,7 +141,7 @@ public class CollectionsUtil {
     forEachExternalCollection(listaStringuriLinked);
 
 
-  
+
 
     HashSet<String> h = new HashSet<String>();
 
