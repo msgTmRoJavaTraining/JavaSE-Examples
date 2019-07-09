@@ -58,8 +58,8 @@ public class Main {
         else{
             System.out.println("They are not the same managers!");
         }
-        /*System.out.println(manager);
-        manager.dance();*/
+        System.out.println(manager);
+        manager.dance();
 
     }
 }
