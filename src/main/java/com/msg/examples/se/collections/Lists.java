@@ -23,7 +23,10 @@ public class Lists {
     System.out.println("Exists = " + Collections.binarySearch(linked, 7));
     Collections.sort(linked);
     System.out.println("Exists = " + Collections.binarySearch(linked, 7));
+
   }
+
+
 
 
 }
