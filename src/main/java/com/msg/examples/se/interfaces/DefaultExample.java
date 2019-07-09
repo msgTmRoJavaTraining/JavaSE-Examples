@@ -9,7 +9,7 @@ public class DefaultExample {
 
 interface A {
     default void foo() {
-        System.out.println("A.foo");
+        System.out.println("A.foo doo");
     }
 }
 
