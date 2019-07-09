@@ -6,6 +6,7 @@ abstract class Person {
     public Person(String n){
         name = n;
     }
+
     public String getName(){return name;}
     public abstract void dance();
 }

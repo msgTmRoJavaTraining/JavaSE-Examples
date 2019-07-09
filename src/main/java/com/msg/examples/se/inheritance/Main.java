@@ -5,14 +5,16 @@ public class Main {
 
         Manager manager = new Manager("Le Bo$$", 1000000, 1999, 12, 1);
         Manager manager1 = new Manager("Sefuu",200000,2000,1,12);
-        manager.setBonus(100);
+        Manager manager2 = new Manager("Le Bo$$", 1000000, 1999, 12, 1);
+       // manager.setBonus(100);
 
-        Employee[] staff = new Employee[4];
+        Employee[] staff = new Employee[5];
 
         staff[0] = manager;
         staff[1] = new Employee("Harry Hacker", 50000, 1989, 10, 1);
         staff[2] = new Employee("Tony Tester", 40000, 1990, 3, 15);
         staff[3] = manager1;
+        staff[4] = manager2;
         for (Employee e : staff) {
 //            System.out.println(e.getName() + " " + e.getSalary());
         }
@@ -50,5 +52,6 @@ public class Main {
         System.out.println(manager1.toString());
         Person p1 = new Student("Ionel");
         p1.dance();
+        System.out.println(manager.equals(manager2));
     }
 }

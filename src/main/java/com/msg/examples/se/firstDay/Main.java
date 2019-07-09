@@ -4,7 +4,7 @@ public class Main{
 
     public int sumFor(){
         int sum = 1;
-        for(int i = 1;i<=10;i++){
+        for(int i = 1;i<10;i++){
 
             sum=sum+2;
         }
@@ -34,7 +34,7 @@ public class Main{
         do {
             sum+=2;
             a++;
-        }while(a<=10);
+        }while(a<10);
              return sum;
     }
 
