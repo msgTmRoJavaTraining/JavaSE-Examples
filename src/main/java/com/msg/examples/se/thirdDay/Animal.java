@@ -1,5 +1,7 @@
 package com.msg.examples.se.thirdDay;
 
 public interface Animal {
-    void run();
+    default void run() {
+        System.out.println("An animal runs");
+    }
 }
