@@ -16,6 +16,23 @@ public class CollectionsUtil {
     collection.forEach(System.out::println);
   }
 
+
+  public static void removeGivenLength(int x, ArrayList<String> list) {
+
+    /*
+    Iterator<String> iterator = list.iterator();
+
+    while (iterator.hasNext()) {
+      String element = iterator.next();
+      if (element.length() == x) {
+        iterator.remove();
+      }
+    }*/
+
+     list.removeIf(element->element.length()==x);
+
+  }
+
   public static <T> void forEachExternalCollection(Collection<T> collection) {
     for (T element : collection) {
       System.out.print(element + " ");
@@ -59,17 +76,6 @@ public class CollectionsUtil {
     set.forEach(System.out::println);
   }
 
-  public static void removeGivenLength(int x, ArrayList<String> list) {
-
-    Iterator<String> iterator = list.iterator();
-
-    while (iterator.hasNext()) {
-      String element = iterator.next();
-      if (element.length() == x) {
-        iterator.remove();
-      }
-    }
-  }
 
 
   public static void parcurgeMap(Map<Integer,String> map)
@@ -100,7 +106,8 @@ public class CollectionsUtil {
     listaStringuri.add("Ana");
     listaStringuri.add("Ioana");
     listaStringuri.add("Adrei");
-
+    listaStringuri.add("Ionel");
+    listaStringuri.add("Ana2");
     forEachExternalCollection(listaStringuri);
 
     // ------------remove given length----------------

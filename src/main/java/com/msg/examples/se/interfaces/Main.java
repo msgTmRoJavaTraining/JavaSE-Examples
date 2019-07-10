@@ -77,6 +77,8 @@ public class Main {
         employees.stream().map(Employee::getSalary).filter(salary -> salary > 70000).forEach(System.out::println);
         System.out.println();
 
+        //employees.stream().map(Employee::getName).filter(name -> name.equals("Carl Cracker")).forEach(System.out::println);
+
     }
 
     private static void printEmployeeArray(Employee[] employees) {
