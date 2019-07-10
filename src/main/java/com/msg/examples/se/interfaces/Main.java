@@ -16,7 +16,7 @@ public class Main {
 
         //ascending order
         Arrays.sort(staff);
-//        printEmployeeArray(staff);
+        //printEmployeeArray(staff);
 
         System.out.println("---------------------------");
 
