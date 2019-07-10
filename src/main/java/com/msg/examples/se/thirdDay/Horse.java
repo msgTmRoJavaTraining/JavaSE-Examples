@@ -9,8 +9,7 @@ public class Horse implements Animal {
     }
 
     @Override
-    public void run()
-    {
+    public void run() {
         System.out.println("I run faster than you, even if I'm bigger than you.");
     }
 }

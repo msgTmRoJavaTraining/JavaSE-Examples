@@ -6,7 +6,7 @@ import java.util.Comparator;
 public class Main {
     public static void main(String[] args) {
         String[] strArray = {"portocala", "bala", "ala"};
-        Integer[] numbers = {660, 122, 500, 135, 16669,15559};
+        Integer[] numbers = {660, 122, 500, 135, 16669, 15559};
 
         // Exercise 1
         MyStringLengthComparator MyStringComparator = new MyStringLengthComparator();
@@ -25,7 +25,7 @@ public class Main {
         Comparator<Integer> myDigitsComparator = new Comparator<Integer>() {
             @Override
             public int compare(Integer t1, Integer t2) {
-                return Integer.compare(getDigitsBiggerthan5Number(t1), getDigitsBiggerthan5Number(t2));
+                return Integer.compare(getDigitsBiggerThan5Number(t1), getDigitsBiggerThan5Number(t2));
             }
         };
 
@@ -50,7 +50,7 @@ public class Main {
         Winnie.run();
     }
 
-    public static int getVowelsNumber(String str) {
+    private static int getVowelsNumber(String str) {
         int count = 0;
         for (int i = 0; i < str.length(); i++) {
             if (str.charAt(i) == 'a' || str.charAt(i) == 'e' || str.charAt(i) == 'i'
@@ -61,7 +61,7 @@ public class Main {
         return count;
     }
 
-    public static int getDigitsBiggerthan5Number(Integer number) {
+    private static int getDigitsBiggerThan5Number(Integer number) {
         int count = 0;
         while (number != 0) {
             int digit;
