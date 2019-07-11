@@ -34,9 +34,11 @@ public class MyStreams {
         Random randomGenerator = new Random();
         Stream.iterate(ThreadLocalRandom.current().nextDouble(0,10), n -> ThreadLocalRandom.current().nextDouble(0,10)).limit(5).forEach(System.out::println);
 
+
         System.out.println("\nCreating a list with 10 random doubles:");
         ArrayList<Double> listOfRandomDoubles=new ArrayList<>();
         Stream.iterate(randomGenerator.nextDouble()*10, n -> randomGenerator.nextDouble()*10).limit(10).forEach(value -> listOfRandomDoubles.add(value));
+
         Iterator<Double> iterator=listOfRandomDoubles.iterator();
 
         int cnt=0;
@@ -49,6 +51,7 @@ public class MyStreams {
         Integer[] cnt2=new Integer[]{0};
         Double[] arrayOfRandomDoubles=new Double[21];
         Stream.iterate(randomGenerator.nextDouble()*10, n -> randomGenerator.nextDouble()*10).limit(20).forEach(value -> { cnt2[0]++;arrayOfRandomDoubles[cnt2[0]]=value;});
+
 
         for (int i=1;i< arrayOfRandomDoubles.length;i++)
             System.out.println("Place in array: "+ i+" - Value: "+arrayOfRandomDoubles[i]);
