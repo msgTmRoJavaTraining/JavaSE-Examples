@@ -13,7 +13,10 @@ public class OptionalExamples {
 
         String anotherName = Optional.<String>empty().orElseGet(() -> "Jena");
         System.out.println(anotherName);
-
-        Optional.<String>empty().orElseThrow(() -> new Exception("I'm failing"));
+        try {
+            Optional.<String>empty().orElseThrow(() -> new Exception("I'm failing"));
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 }
