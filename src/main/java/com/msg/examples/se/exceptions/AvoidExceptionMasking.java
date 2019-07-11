@@ -5,7 +5,7 @@ import java.io.InputStream;
 import java.util.logging.Logger;
 
 @SuppressWarnings({"ThrowFromFinallyBlock", "ConstantConditions", "TryFinallyCanBeTryWithResources"})
-public class AvoidExceptionMasking {
+public class    AvoidExceptionMasking {
     private static final Logger LOGGER = Logger.getLogger(AvoidExceptionMasking.class.getPackage().getName());
 
     //exception inside try block is masked if close throws an exception
