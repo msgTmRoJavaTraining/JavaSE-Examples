@@ -29,8 +29,8 @@ public class ExercitiiStreams {
                 .limit(5).forEach((number) -> System.out.print(new DecimalFormat("#.00").format(number) + " "));
 
         System.out.println("\nPartea 2, folosind o lista");
-        List<Double> randomDoubleList = Stream.generate(() -> ThreadLocalRandom.current().nextDouble(0, 10))
-                .limit(10).collect(Collectors.toList());
+        ArrayList<Double> randomDoubleList = Stream.generate(() -> ThreadLocalRandom.current().nextDouble(0, 10))
+                .limit(10).collect(Collectors.toCollection(ArrayList::new));
 
         for(Double d : randomDoubleList) {
             System.out.print(new DecimalFormat("#.00").format(d) + " ");
