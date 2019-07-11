@@ -53,6 +53,6 @@ public class Main {
             System.out.println("Place in array: "+ i+" - Value: "+doubleArray[i]);
 
     }
-   
+
 }
 
