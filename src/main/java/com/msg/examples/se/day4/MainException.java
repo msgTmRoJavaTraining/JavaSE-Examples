@@ -29,18 +29,20 @@ public class MainException {
                     try {
                         boolean contains = line.contains("-");
                         if(!contains)throw new InvalidLineFormatException(line);
+                        else{
+                            for (int i = 0;i< lines.length; i++) {
+                                content.add(lines[i]);
+                                if(lines[i].length()< minString.length() && lines[i]!= null){
+                                    minString = lines[i];
+                                }
+                            }
+                            System.out.println(minString);
+                        }
 
                     } catch(Exception e) {
                         System.out.println(e.getMessage());
                         LOGGER.severe("Line no" + contorLines);
                     }
-                    for (int i = 0;i< lines.length; i++) {
-                        content.add(lines[i]);
-                        if(lines[i].length()< minString.length() && lines[i]!= null){
-                            minString = lines[i];
-                        }
-                    }
-                    System.out.println(minString);
                     line = reader.readLine();
                 }
             }
