@@ -10,13 +10,33 @@ public class Streams {
     private static final Logger LOGGER = Logger.getLogger(Streams.class.getPackage().getName());
 
 
+    public static boolean isEven(int a)
+    {
+        return a%2==0;
+    }
+
     public static String commaSeparated(ArrayList<Integer>list)
     {
+        int []nr=new int[1];
+        nr[0]=0;
+        String rez=list.stream().map(a->{
+            if(nr[0]==0)
+            {
+                nr[0]++;
+                if(isEven(a))
+                return "e"+a;
+                 else
+                return "o"+a;
+            }
+            else {
+                if (isEven(a))
+                    return ",e" + a;
+                else
+                    return ",o" + a;
+            }
+        }).reduce("",(a1,b)->a1+b);
 
-        //String rez=list.stream().map(Integer::intValue).filter(n->n%2==0).forEach();
-
-
-        return "";
+        return rez;
 
     }
 
@@ -80,6 +100,18 @@ public class Streams {
 
         for(Double d:stringArray)
             System.out.println(d);
+
+        ArrayList<Integer> listaInt=new ArrayList<>();
+        listaInt.add(1);
+        listaInt.add(2);
+        listaInt.add(6);
+        listaInt.add(33);
+        listaInt.add(99);
+        listaInt.add(40);
+
+
+        System.out.println();
+        System.out.println(commaSeparated(listaInt));
     }
 }
 
