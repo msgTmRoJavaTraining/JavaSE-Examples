@@ -18,8 +18,7 @@ public class Streams {
     public static String commaSeparated(ArrayList<Integer>list)
     {
         int []nr=new int[1];
-        nr[0]=0;
-        String rez=list.stream().map(a->{
+        return list.stream().map(a->{
             if(nr[0]==0)
             {
                 nr[0]++;
@@ -36,7 +35,6 @@ public class Streams {
             }
         }).reduce("",(a1,b)->a1+b);
 
-        return rez;
 
     }
 
