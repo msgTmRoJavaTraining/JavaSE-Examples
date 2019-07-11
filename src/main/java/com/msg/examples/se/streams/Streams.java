@@ -1,14 +1,27 @@
 package com.msg.examples.se.streams;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.OptionalInt;
+import java.util.*;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class Streams {
     private static final Logger LOGGER = Logger.getLogger(Streams.class.getPackage().getName());
+
+
+    public static String commaSeparated(ArrayList<Integer>list)
+    {
+
+        //String rez=list.stream().map(Integer::intValue).filter(n->n%2==0).forEach();
+
+
+        return "";
+
+    }
+
+
+
     public static void main(String[] args) {
         String[] strs = {"ana", "are", "mere"};
         //count the number of elements of the str array
@@ -44,5 +57,29 @@ public class Streams {
                     return a + b;
                 });
         System.out.println(reducedParallel + " combiner is called with parallel streams");
+
+        Random rand=new Random();
+        Stream<Double> streamInf = Stream.iterate(0.0,n->10*rand.nextDouble()).skip(1).limit(5);
+
+        System.out.println();
+        streamInf.forEach(System.out::println);
+
+        System.out.println("============Lista cu 10 elem================");
+
+        Stream<Double> streamList=Stream.iterate(0.0,n->10.0* rand.nextDouble()).skip(1).limit(10);
+
+        List<Double> listaDouble =  streamList.collect(Collectors.toList());
+
+        listaDouble.forEach(System.out::println);
+
+        System.out.println("============vector cu 20 elem================");
+
+        Stream<Double> streamArray=Stream.iterate(0.0,n->10.0 * rand.nextDouble()).skip(1).limit(20);
+
+        Double[] stringArray = streamArray.toArray(Double[]::new);
+
+        for(Double d:stringArray)
+            System.out.println(d);
     }
 }
+
