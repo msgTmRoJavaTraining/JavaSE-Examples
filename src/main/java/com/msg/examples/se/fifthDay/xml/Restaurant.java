@@ -1,4 +1,4 @@
-package com.msg.examples.se.fifthDay;
+package com.msg.examples.se.fifthDay.xml;
 
 import lombok.Setter;
 

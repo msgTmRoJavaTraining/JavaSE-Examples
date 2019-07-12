@@ -1,8 +1,5 @@
-package com.msg.examples.se.fifthDay;
+package com.msg.examples.se.fifthDay.xml;
 
-
-import com.msg.examples.se.jaxb.entities.Dog;
-import com.msg.examples.se.jaxb.entities.Dogstore;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;

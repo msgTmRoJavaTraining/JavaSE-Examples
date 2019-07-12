@@ -35,6 +35,16 @@ INSERT INTO `employees` (`id`,`last_name`,`first_name`,`email`, `department`, `s
 --
 -- DEFINE STORED PROCEDURES
 --
+DELIMITER $$
+DROP PROCEDURE IF EXISTS `delete_employees_above`$$
+
+CREATE PROCEDURE `delete_employees_above`(IN salaryToD decimal,OUT deletedName varchar(200))
+BEGIN
+    select group_concat(emp.first_name,' ',emp.last_name separator ' ,') into deletedName from employees emp where emp.salary>salaryToD;
+    delete from employees   where salary > salaryToD;
+
+END$$
+DELIMITER ;
 
 DELIMITER $$
 DROP PROCEDURE IF EXISTS `get_count_for_department`$$
