@@ -6,13 +6,56 @@ import javax.xml.bind.Unmarshaller;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.sql.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) throws Exception {
         exercise1();
+        int indexCol = 1;
+        int givenAmount = 80000;
+        String namesResulted;
+        List<String> deletedEmployees= new ArrayList<>();
+        String dbUrl = "jdbc:mysql://localhost:3306/java_training?autoReconnect=true&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+        String user = "root";
+        String pass = "root";
+        try (Connection connection = DriverManager.getConnection(dbUrl, user, pass);
+             Statement statement = connection.createStatement()) {
+            ResultSet resultSet = statement.executeQuery("select * from employees");
+            ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
+                System.out.println("Lines cover the following columns: ");
+                while(indexCol<resultSetMetaData.getColumnCount()){
+                    System.out.println(resultSetMetaData.getColumnName(indexCol));
+                    indexCol +=1;
+                }
+            resultSet.close();
+            CallableStatement st = null;
+            st = connection.prepareCall("{call delete_employees_with_higher_salary(?, ?)}");
+            st.setInt(1,givenAmount);
+            st.registerOutParameter(2, Types.VARCHAR);
+            st.execute();
+            namesResulted = st.getString(2);
+            if(namesResulted!= null && namesResulted.contains(",")){
+                deletedEmployees =  Arrays.asList(namesResulted.split(","));
+                System.out.println("\nDeleted employees are: ");
+            }
+            if(deletedEmployees.size()>0){
+                for(String emp: deletedEmployees){
+                    System.out.println(emp);
+                }
+            }else if(namesResulted != null){
+                System.out.println(namesResulted);
+            }
+
+
+
+        } catch (SQLException exc) {
+            exc.printStackTrace();
+        }
+
     }
 
     public static void exercise1() throws Exception {
