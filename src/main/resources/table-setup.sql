@@ -79,3 +79,13 @@ CREATE PROCEDURE `increase_salaries_for_department`(IN the_department VARCHAR(64
 
   END$$
 DELIMITER ;
+
+DELIMITER $$
+DROP PROCEDURE IF EXISTS `delete_employees_by_salary`$$
+
+CREATE PROCEDURE `delete_employees_by_salary`(IN amount DECIMAL(10,2), OUT deletedEmployees VARCHAR(255))
+    BEGIN
+        select group_concat(last_name, ' ' ,first_name separator ', ') into deletedEmployees from employees where salary > amount;
+        delete from employees where salary > amount;
+    END$$
+DELIMITER ;
