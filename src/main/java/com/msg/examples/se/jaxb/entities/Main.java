@@ -15,7 +15,6 @@ public class Main
 
         franchise();
 
-
      }
 
     public static void franchise() throws Exception
@@ -69,7 +68,6 @@ public class Main
         res.add(r1);
         res.add(r2);
 
-        //System.out.println(res);
 
         JAXBContext context = JAXBContext.newInstance(FranchiseNetwork.class);
         Marshaller marshaller = context.createMarshaller();
@@ -84,7 +82,9 @@ public class Main
 
         Unmarshaller unmarshaller = context.createUnmarshaller();
         FranchiseNetwork franchiseNetworkUnmarshalled = (FranchiseNetwork) unmarshaller.unmarshal(new ByteArrayInputStream(outputStream.toByteArray()));
-        //System.out.println(franchiseNetworkUnmarshalled);
 
+        System.out.println();
+
+        franchiseNetworkUnmarshalled.getRestaurants().forEach(System.out::println);
     }
 }
