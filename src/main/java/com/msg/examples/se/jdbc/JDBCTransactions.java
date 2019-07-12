@@ -53,5 +53,4 @@ public class JDBCTransactions {
 
     return input.equalsIgnoreCase("yes");
   }
-
 }
