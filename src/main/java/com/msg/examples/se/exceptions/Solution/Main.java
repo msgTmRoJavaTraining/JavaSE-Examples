@@ -4,8 +4,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-import static com.sun.xml.internal.ws.spi.db.BindingContextFactory.LOGGER;
-
 public class Main {
     public static void main(String[] args) {
         String line;
@@ -33,7 +31,6 @@ public class Main {
                     System.out.println();
                 } catch (InvalidLineFormatException e) {
                     System.out.println(e.getMessage());
-                    LOGGER.warning("Line number: "+line_number);
                 }
             }
         } catch (FileNotFoundException fnfe) {

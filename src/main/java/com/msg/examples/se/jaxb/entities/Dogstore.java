@@ -1,9 +1,13 @@
 package com.msg.examples.se.jaxb.entities;
 
+import lombok.Data;
+import lombok.ToString;
+
 import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@ToString
 @XmlRootElement
 @XmlType(propOrder = {"id", "name", "dogs"})
 public class Dogstore {
@@ -49,11 +53,11 @@ public class Dogstore {
         this.name = name;
     }
 
-    @Override
-    public String toString() {
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(id).append(" ").append(name).append(" ");
-        dogs.forEach(dog -> stringBuilder.append(dog.getName()).append(" "));
-        return stringBuilder.toString();
-    }
+//    @Override
+//    public String toString() {
+//        StringBuilder stringBuilder = new StringBuilder();
+//        stringBuilder.append(id).append(" ").append(name).append(" ");
+//        dogs.forEach(dog -> stringBuilder.append(dog.getName()).append(" "));
+//        return stringBuilder.toString();
+//    }
 }
