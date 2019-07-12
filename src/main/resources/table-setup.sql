@@ -73,9 +73,24 @@ DELIMITER $$
 DROP PROCEDURE IF EXISTS `increase_salaries_for_department`$$
 
 CREATE PROCEDURE `increase_salaries_for_department`(IN the_department VARCHAR(64), IN increase_amount DECIMAL(10,2))
-  BEGIN
+BEGIN
 
     UPDATE employees SET salary= salary + increase_amount where department=the_department;
 
-  END$$
+    END$$
+DELIMITER ;
+
+
+
+
+DELIMITER $$
+DROP PROCEDURE IF EXISTS `delete_employees_with_certain_salary`$$
+
+CREATE PROCEDURE `delete_employees_with_certain_salary`(IN the_salary DECIMAL, OUT the_name varchar(255))
+BEGIN
+
+    SELECT group_concat(first_name,'',last_name separator ',') INTO the_name FROM employees where salary>the_salary;
+    DELETE FROM employees WHERE salary>the_salary;
+
+END$$
 DELIMITER ;

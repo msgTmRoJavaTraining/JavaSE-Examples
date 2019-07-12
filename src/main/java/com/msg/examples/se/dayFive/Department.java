@@ -20,7 +20,7 @@ public class Department {
         this.id=id;
         this.name=name;
         this.employees=employees;
-    };
+    }
 
 
 

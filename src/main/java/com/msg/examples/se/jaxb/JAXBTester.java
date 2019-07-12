@@ -12,7 +12,7 @@ import java.io.File;
 
 public class JAXBTester {
     public static void main(String[] args) throws Exception {
-        example1();
+      //  example1();
         example2();
     }
 

@@ -22,7 +22,7 @@ public class JDBCExecuteQuery {
 
       resultSet.close();
     } catch (SQLException exc) {
-      exc.printStackTrace();
-    }
+    exc.printStackTrace();
+  }
   }
 }

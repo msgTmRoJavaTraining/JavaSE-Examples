@@ -39,9 +39,7 @@ public class Dogstore {
         this.dogs = dogs;
     }
 
-    public Dogstore() {
-
-    }
+    public Dogstore() { }
 
     public Dogstore(int id, String name) {
 
