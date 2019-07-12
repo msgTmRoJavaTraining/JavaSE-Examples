@@ -13,6 +13,7 @@ public class Restaurant {
     private List<Department>departments = new ArrayList<>();
 
     public Restaurant(){}
+    @XmlAttribute(name= "restaurant_id")
     public int getId() {
         return id;
     }
