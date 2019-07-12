@@ -48,6 +48,16 @@ CREATE PROCEDURE `get_count_for_department`(IN the_department VARCHAR(64), OUT t
 DELIMITER ;
 
 DELIMITER $$
+DROP PROCEDURE IF EXISTS `delete_employee_specified_amount`$$
+
+CREATE PROCEDURE `delete_employee_specified_amount`(IN salary_amount DECIMAL(10,2),OUT full_name VARCHAR(255))
+ BEGIN
+     SELECT  group_concat(emp.first_name,' ',emp.last_name separator ' ,') into full_name from employees emp where emp.salary > salary_amount;
+ END $$
+DELIMITER ;
+
+
+DELIMITER $$
 DROP PROCEDURE IF EXISTS `get_employees_for_department`$$
 
 CREATE PROCEDURE `get_employees_for_department`(IN the_department VARCHAR(64))
