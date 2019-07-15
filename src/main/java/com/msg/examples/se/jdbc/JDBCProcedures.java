@@ -10,8 +10,10 @@ public class JDBCProcedures {
     CallableStatement statement = null;
     ResultSet resultSet = null;
 
+    String dbUrl = "jdbc:mysql://localhost:3306/java_training?autoReconnect=true&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+    String user = "root", pass = "root";
     try {
-      connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_training", "java.training", "JavaTraining1");
+      connection = DriverManager.getConnection(dbUrl, user, pass);
 
       // Call stored procedure get_count_for_department
       statement = connection.prepareCall("{call get_count_for_department(?, ?)}");
