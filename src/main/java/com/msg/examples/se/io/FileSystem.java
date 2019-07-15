@@ -14,11 +14,12 @@ public class FileSystem {
     try {
       File tempFile = File.createTempFile("myTemp", ".tmp");
       System.out.println("Created file: " + tempFile.getAbsolutePath());
-      tempFile.deleteOnExit();
+     
 
-      Path target = Paths.get(".");
-      Files.copy(Paths.get(tempFile.getAbsolutePath()), target.resolve(tempFile.getName()), StandardCopyOption.REPLACE_EXISTING);
-      Files.move(Paths.get(tempFile.getAbsolutePath()), target.resolve(tempFile.getName() + "-moved"), StandardCopyOption.ATOMIC_MOVE);
+
+      Files.copy(Paths.get(tempFile.getAbsolutePath()), Paths.get(tempFile.getParentFile().getAbsolutePath() + "/copy1_" + tempFile.getName()));
+
+
     } catch (IOException e) {
       e.printStackTrace();
     }
