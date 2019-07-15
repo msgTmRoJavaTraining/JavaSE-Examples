@@ -1,4 +1,4 @@
-package com.msg.examples.se.week2d1;
+package com.msg.examples.se.week2d1.TimeStuff;
 
 public enum ChiZodiac {
     Rat,

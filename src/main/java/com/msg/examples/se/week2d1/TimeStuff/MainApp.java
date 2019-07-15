@@ -1,14 +1,8 @@
-package com.msg.examples.se.week2d1;
+package com.msg.examples.se.week2d1.TimeStuff;
 
-import com.msg.examples.se.datetime.TimeAdjustments;
-
-import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoField;
-import java.time.temporal.TemporalAdjuster;
-import java.time.temporal.TemporalAdjusters;
-import java.util.Arrays;
 
 public class MainApp {
     public static void main(String[] args) {
