@@ -1,10 +1,8 @@
 package com.msg.examples.se.Day6;
 
-import com.sun.org.apache.regexp.internal.RE;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.time.Period;
 import java.time.temporal.ChronoUnit;
 import java.time.temporal.Temporal;
 import java.time.temporal.TemporalAdjuster;
