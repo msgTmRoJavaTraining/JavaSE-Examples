@@ -9,6 +9,8 @@ import java.time.temporal.TemporalAdjusters;
 public class PayDayAdjuster implements TemporalAdjuster {
 
   public Temporal adjustInto(Temporal input) {
+
+
     LocalDate payDay = LocalDate.from(input).with(TemporalAdjusters.lastDayOfMonth());
 
     if (payDay.getDayOfWeek() == DayOfWeek.SATURDAY ||
