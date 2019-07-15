@@ -1,0 +1,3 @@
+Fisier exercitiu IO 1
+Aceasta este prima linie
+Aceasta este a doua linie
