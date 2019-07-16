@@ -2,7 +2,6 @@ package com.msg.examples.se.Day7;
 
 import java.text.*;
 import java.time.Instant;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
@@ -42,6 +41,7 @@ public class InternationalizationMain {
             formatter.setLocale(locale);
             String parametrized = formatter.format(messageArguments);
             System.out.println("This is a regional expresion: " + parametrized);
+
         } catch (MissingResourceException ex) {
             System.out.println("Resource bundle not found!");
         }
