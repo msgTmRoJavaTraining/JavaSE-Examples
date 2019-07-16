@@ -24,14 +24,20 @@ public class VisitAllFiles extends SimpleFileVisitor<Path> {
             BufferedReader in = new BufferedReader(new InputStreamReader(fis));
 
             String line=null;
+            StringBuilder s = new StringBuilder();
 
             while ((line = in.readLine()) != null) {
+                s.append(line);
+                line = in.readLine();
+            }
+            String string= s.toString();
 
-
-                BufferedWriter writer = new BufferedWriter(new FileWriter("final.txt"));
+                BufferedWriter writer = new BufferedWriter(new FileWriter("final.txt",true));
+                writer.append(string);
+                writer.append("\n");
                 writer.close();
             }
-        }
+
         return CONTINUE;
     }
 
