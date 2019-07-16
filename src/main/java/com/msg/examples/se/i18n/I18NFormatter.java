@@ -8,6 +8,7 @@ import java.util.Scanner;
 
 public class I18NFormatter {
   public static void main(String args[]) {
+
     Scanner scanner = new Scanner(System.in);
     System.out.print("Please select language: ");
     String language = scanner.next("\\w\\w");
@@ -19,9 +20,11 @@ public class I18NFormatter {
     } else if (language.equals("ro")) {
       country = "RO";
     }
+
     Locale locale = new Locale(language, country);
 
     double number = 346.548;
+
     NumberFormat numberFormatter = NumberFormat.getInstance(locale);
     System.out.println(numberFormatter.format(number));
 

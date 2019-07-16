@@ -1,14 +1,12 @@
 package com.msg.examples.se.io;
 
-import java.nio.file.FileVisitResult;
-import java.nio.file.Path;
-import java.nio.file.SimpleFileVisitor;
+import java.io.IOException;
+import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
 
 import static java.nio.file.FileVisitResult.CONTINUE;
 
-public class FileVisitorEx extends SimpleFileVisitor<Path>
-{
+public class FileVisitorEx extends SimpleFileVisitor<Path> {
 
     @Override
     public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attr) {
@@ -16,9 +14,12 @@ public class FileVisitorEx extends SimpleFileVisitor<Path>
         return CONTINUE;
     }
 
-    public FileVisitResult visitFile(Path file, BasicFileAttributes attr)
-    {
+    @Override
+    public FileVisitResult visitFile(Path file, BasicFileAttributes attr) {
+
+        //file.getFileName().toString().contains(".log");
         if (attr.isSymbolicLink()) {
+
 
             System.out.printf("Symbolic link: %s ", file);
         } else if (attr.isRegularFile()) {
@@ -30,4 +31,13 @@ public class FileVisitorEx extends SimpleFileVisitor<Path>
         return CONTINUE;
     }
 
+    public static void main(String[] args) {
+
+        try {
+            Path startingDir = Paths.get("..");
+            Files.walkFileTree(startingDir, new FileVisitorEx());
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+    }
 }

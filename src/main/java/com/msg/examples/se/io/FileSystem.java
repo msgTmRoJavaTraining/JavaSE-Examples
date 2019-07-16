@@ -19,7 +19,6 @@ public class FileSystem {
 
       Files.copy(Paths.get(tempFile.getAbsolutePath()), Paths.get(tempFile.getParentFile().getAbsolutePath() + "/copy1_" + tempFile.getName()));
 
-
     } catch (IOException e) {
       e.printStackTrace();
     }

@@ -12,11 +12,21 @@ public class I18NTranslation {
     Scanner scanner = new Scanner(System.in);
     System.out.print("Please select language: ");
     String language = scanner.next("\\w\\w");
+    System.out.print("Please select region: ");
+    String reg = scanner.next();
+
     String country = "US";
+    String region="";
+
     if (language.equals("fr")) {
       country = "FR";
     }
-    Locale locale = new Locale(language, country);
+    if (language.equals("ro")) {
+      country = "RO";
+      if(reg.equals("MO"))
+        region="Moldova";
+    }
+    Locale locale = new Locale(language, country, region);
 
     try {
       ResourceBundle messages = ResourceBundle.getBundle("i18n/MyBundle", locale);
