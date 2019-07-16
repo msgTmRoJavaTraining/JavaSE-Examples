@@ -22,6 +22,8 @@ public class CustomProcessor extends AbstractProcessor {
 
   private boolean generated;
 
+
+
   @Override
   public synchronized void init(ProcessingEnvironment processingEnv) {
     super.init(processingEnv);
