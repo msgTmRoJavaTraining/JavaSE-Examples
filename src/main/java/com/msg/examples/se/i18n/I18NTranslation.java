@@ -6,7 +6,7 @@ import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 
-public class I18NTranslation {
+class frI18NTranslation {
 
   public static void main(String args[]) {
     Scanner scanner = new Scanner(System.in);
