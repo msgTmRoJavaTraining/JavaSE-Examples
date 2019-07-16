@@ -16,6 +16,9 @@ public class I18NTranslation {
     if (language.equals("fr")) {
       country = "FR";
     }
+    if(language.equals("ro")){
+      country="RO";
+    }
     Locale locale = new Locale(language, country);
 
     try {
