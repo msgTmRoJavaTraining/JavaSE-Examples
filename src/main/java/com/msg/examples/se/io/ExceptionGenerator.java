@@ -5,29 +5,21 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.EmptyStackException;
 
-class SpecialCase extends Exception
-{
-    SpecialCase(String s)
-    {
-        super(s);
-    }
-}
 public class ExceptionGenerator
 {
 
-    public static void ex1() throws SpecialCase
+    public static void ex1() throws NullPointerException
     {
-        throw new SpecialCase("Prima exceptie");
+        throw new NullPointerException();
     }
 
-    public static void ex2() throws SpecialCase
-    {
-        throw new SpecialCase("A doua exceptie");
+    public static void ex2() throws InterruptedException {
+        throw new InterruptedException();
     }
 
-    public static void ex3() throws SpecialCase
+    public static void ex3()
     {
-        throw new SpecialCase("A treia exceptie");
+        throw new IndexOutOfBoundsException();
     }
 
     public static void main(String[] args) throws IOException {
@@ -39,7 +31,7 @@ public class ExceptionGenerator
         catch (Exception e)
         {
             BufferedWriter writer = new BufferedWriter(new FileWriter("one.log"));
-           writer.write(e.getMessage()+"   "+String.valueOf(e.getStackTrace()));
+           writer.write(e.toString()+"   "+String.valueOf(e.getStackTrace()));
            writer.close();
         }
 
@@ -50,7 +42,7 @@ public class ExceptionGenerator
         catch (Exception e)
         {
             BufferedWriter writer = new BufferedWriter(new FileWriter("two.log"));
-            writer.write(e.getMessage()+"   "+String.valueOf(e.getStackTrace()));
+            writer.write(e.toString()+"   "+String.valueOf(e.getStackTrace()));
             writer.close();
 
         }
@@ -63,7 +55,7 @@ public class ExceptionGenerator
         {
             BufferedWriter writer = new BufferedWriter(new FileWriter("three.log"));
 
-            writer.write(e.getMessage()+"   "+String.valueOf(e.getStackTrace()));
+            writer.write(e.toString()+"   "+String.valueOf(e.getStackTrace()));
             writer.close();
         }
 
